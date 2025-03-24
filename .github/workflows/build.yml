@@ -23,7 +23,8 @@ jobs:
 
       - name: Build EXE
         run: |
-          pyinstaller master_image_template_generation.spec
+          pyinstaller master_image_template_generation.spec --exclude-module pathlib
+      
 
       - name: Upload EXE as Artifact
         uses: actions/upload-artifact@v4
